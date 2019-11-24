@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'acaiteste.herokuapp.com',
+    'acaitest.herokuapp.com',
 ]
 
 

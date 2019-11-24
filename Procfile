@@ -1,1 +1,1 @@
-web: gunicorn acaiteste.wsgi --log-file -
+web: gunicorn acaitest.wsgi --log-file -
