@@ -94,16 +94,16 @@ WSGI_APPLICATION = 'vendas.wsgi.application'
 #    }
 #}
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'vendas',
-#        'USER': 'postgres',
-#        'PASSWORD': '957855',
-#        'HOST': '127.0.0.1',
-#        'PORT': '', # 8000 is default
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'vendas',
+        'USER': 'postgres',
+        'PASSWORD': '957855',
+        'HOST': '127.0.0.1',
+        'PORT': '', # 8000 is default
+    }
+}
 
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
