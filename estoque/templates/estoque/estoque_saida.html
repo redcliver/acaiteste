@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+{% if msg %}
+    <h1 style="text-align:center;">{{msg}}</h1><hr />
+{%endif%}
+<h1>Saida estoque</h1><hr />
+    <form method="POST">
+    {%csrf_token%}
+        {% if produto_obj %}
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputName">Produto<strong>*</strong></label>
+                <input type="text" class="form-control" name="nome" value="{{produto_obj.nome}}" disabled>
+                <br>
+                <button type="submit" formaction="/estoque/saida" class="btn btn-secondary float-right" title="Registrar saída de outro produto.">Outro</button>
+            </div>
+        </div>
+        <hr />
+        {% else %}
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputName">Produto<strong>*</strong></label>
+                    <select autofocus name="produto_id" class="form-control" title="Selecione o produto">
+                        <option disabled selected> -- Produtos -- </option>
+                        {% for produto in produtos %}
+                            <option value="{{produto.id}}">{{produto.nome}}</option>
+                        {% endfor %}
+                    </select>
+                <br>
+                <button type="submit" class="btn btn-secondary float-right" title="Registrar saída do produto.">Proximo</button>
+            </div>
+        </div>
+        {% endif %}
+        {% if produto_obj %}
+        <input type="hidden" name="nova_saida" value="{{produto_obj.id}}" />
+        <div class="form-row">
+            <div class="form-group col-md-1">
+                <label for="inputCel">Estoque</label>
+                <input type="text" class="form-control" value="{{produto_obj.quantidade}}" disabled>
+            </div>
+            <div class="form-group col-md-1">
+                <span class="align-middle">
+                    <label for="inputCel">Quantidade</label>
+                    <input type="text" class="form-control" name="quantidade" maxlength="6" onkeydown="javascript: fMasc( this, mQnt );">
+                </span>
+            </div>
+            <div class="form-group col-md-1">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputName">Venda</label>
+                    <div class="form-check">
+                        <input class="form-check-input" name="venda" value="2" type="radio" id="exampleRadios1" checked >
+                        <label class="form-check-label" for="exampleRadios1">
+                            Não
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="venda" value="1" type="radio" id="exampleRadios2" >
+                        <label class="form-check-label" for="exampleRadios2">
+                            Sim
+                        </label>
+                    </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <button type="submit" class="btn btn-secondary float-right" formaction="/estoque/nova_saida" title="Salvar registro de saída.">Registrar</button>
+            </div>
+        </div>
+        {% endif %}
+    </form>
+{% endblock %}

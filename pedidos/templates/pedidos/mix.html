@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+<main>
+    <form method="POST" action="/pedidos/tamanho/">
+        {% csrf_token %}
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+        <button class="fundo1" type="submit" name="pedido" value="mix1"><img src="../../static/img/mix1.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="mix2"><img src="../../static/img/mix2.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="mix3"><img src="../../static/img/mix3.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="mix4"><img src="../../static/img/mix4.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="mix5"><img src="../../static/img/mix5.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="mix6"><img src="../../static/img/mix6.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="mix7"><img src="../../static/img/mix7.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="mix8"><img src="../../static/img/mix8.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="mix9"><img src="../../static/img/mix9.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="mix10"><img
+                src="../../static/img/mix10.png" /></button>
+    </form>
+</main>
+{% endblock %}

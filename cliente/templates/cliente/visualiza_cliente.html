@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+{% if msg %}
+    <h2 style="text-align:center;">{{msg}}</h2><hr />
+{%endif%}
+<main>
+    <h3>Novo Cliente</h3>
+    <hr />
+    <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="cliente_id" value={{cliente_obj.id}} />
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputName">Nome Completo </label>
+                <input type="text" class="form-control" id="inputEmail4" name="nome" maxlength="200" value="{{cliente_obj.nome}}" required autofocus>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputTel">Telefone 1</label>
+                <input type="text" class="form-control" name="telefone1" maxlength="14" value="{{cliente_obj.telefone1}}" onkeydown="javascript: fMasc( this, mTel );">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputCel">Telefone 2</label>
+                <input type="text" class="form-control" name="telefone2" maxlength="14" value="{{cliente_obj.telefone2}}" onkeydown="javascript: fMasc( this, mTel );">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputName">CPF / CNPJ</label>
+                <input type="text" class="form-control" id="inputEmail4" name="cpf" maxlength="30" value="{{cliente_obj.cpf}}" >
+            </div>
+            <div class="form-group col-md-9">
+                <label for="inputEmail">Endereço</label>
+                <input type="text" class="form-control" id="inputAddress2" maxlength="200" name="endereco" value="{{cliente_obj.endereco}}">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputEmail">Número</label>
+                <input type="text" class="form-control" id="inputAddress2" maxlength="6" name="numero" value="{{cliente_obj.numero}}">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputEmail">Bairro</label>
+                <input type="text" class="form-control" id="inputAddress2" maxlength="200" name="bairro" value="{{cliente_obj.bairro}}">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputEmail">Ponto de Referência</label>
+                <textarea class="form-control" name="referencia" id="exampleFormControlTextarea1" rows="2">{{cliente_obj.referencia}}</textarea>            
+            </div>
+            {% if cliente_obj.estado == '1' %}
+                <div class="form-group col-md-3">
+                    <label for="inputName">Estado</label>
+                    <div class="form-check">
+                        <input class="form-check-input" name="estado" value="1" type="radio" id="exampleRadios1" checked >
+                        <label class="form-check-label" for="exampleRadios1">
+                        Ativo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="estado" value="2" type="radio" id="exampleRadios2" >
+                        <label class="form-check-label" for="exampleRadios2">
+                        Inativo
+                        </label>
+                    </div>
+                </div>
+            {% endif %}
+            {% if cliente_obj.estado == '2' %}
+                <div class="form-group col-md-3">
+                    <label for="inputName">Estado</label>
+                    <div class="form-check">
+                        <input class="form-check-input" name="estado" value="1" type="radio" id="exampleRadios1"  >
+                        <label class="form-check-label" for="exampleRadios1">
+                        Ativo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="estado" value="2" type="radio" id="exampleRadios2" checked>
+                        <label class="form-check-label" for="exampleRadios2">
+                        Inativo
+                        </label>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <br />
+        <button type="submit" class="btn btn-secondary float-left" formaction="/cliente/exclui_cliente/">Excluir</button>
+        <button type="submit" class="btn btn-secondary float-right" formaction="/cliente/salva_cliente/">Salvar</button>
+    </form>
+</main>
+{% endblock %}
+

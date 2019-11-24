@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+{% if msg %}
+    <h2 style="text-align:center;">{{msg}}</h2><hr />
+{%endif%}
+<main>
+    <h3>Novo Cliente</h3>
+    <hr />
+    <form method="post" action="/cliente/novo_cliente/">
+    {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputName">Nome Completo </label>
+                <input type="text" class="form-control" id="inputEmail4" name="nome" maxlength="200" required autofocus>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputTel">Telefone 1</label>
+                <input type="text" class="form-control" name="telefone1" value="{{telefone}}" maxlength="14" onkeydown="javascript: fMasc( this, mTel );">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputCel">Telefone 2</label>
+                <input type="text" class="form-control" name="telefone2" maxlength="14" onkeydown="javascript: fMasc( this, mTel );">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputName">CPF / CNPJ</label>
+                <input type="text" class="form-control" id="inputEmail4" name="cpf" maxlength="30" >
+            </div>
+            <div class="form-group col-md-9">
+                <label for="inputEmail">Endereço</label>
+                <input type="text" class="form-control" id="inputAddress2" maxlength="200" name="endereco">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputEmail">Número</label>
+                <input type="text" class="form-control" id="inputAddress2" maxlength="6" name="numero">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputEmail">Bairro</label>
+                <input type="text" class="form-control" id="inputAddress2" maxlength="200" name="bairro">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputEmail">Ponto de Referência</label>
+                <textarea class="form-control" name="referencia" id="exampleFormControlTextarea1" rows="2"></textarea>            
+            </div>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-secondary float-right">Salvar</button>
+    </form>
+</main>
+{% endblock %}
+

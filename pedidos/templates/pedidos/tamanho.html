@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+<main>
+    <h4>Pedido:</h4>
+    <button class="fundo1 no-click"><img src="../../static/app/img/{{pedido1}}.png" /></button>
+    <form method="POST" action="/pedidos/finalizar/">
+        {% csrf_token %}
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+        <input type="hidden" name="pedido" value="{{pedido1}}" />
+        <h4 for="inputName">Acompanhamento: </h4>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="acompanhamento" id="exampleRadios1" value="N" checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Nada
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="acompanhamento" id="exampleRadios2" value="M">
+            <label class="form-check-label" for="exampleRadios2">
+                Mel
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="acompanhamento" id="exampleRadios2" value="L">
+            <label class="form-check-label" for="exampleRadios2">
+                Leite Condensado
+            </label>
+        </div>
+        <h4>Tamanho:</h4>
+        <button class="fundo1" type="submit" name="tamanho" value="P"><img src="../../static/img/P.png" /></button>
+        <button class="fundo1" type="submit" name="tamanho" value="G"><img src="../../static/img/G.png" /></button>
+        <button class="fundo1" type="submit" name="tamanho" value="S"><img src="../../static/img/S.png" /></button>
+    </form>
+</main>
+{% endblock %}

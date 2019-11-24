@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+<main>
+    <form method="POST" action="/pedidos/tamanho/">
+        {% csrf_token %}
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+        <button class="fundo1" type="submit" name="pedido" value="sucolaranja"><img
+                src="../../static/img/sucolaranja.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sucolaranjaacerola"><img
+                src="../../static/img/sucolaranjaacerola.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sucoacerola"><img
+                src="../../static/img/sucoacerola.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sucomorango"><img
+                src="../../static/img/sucomorango.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sucomaracuja"><img
+                src="../../static/img/sucomaracuja.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sucocupuacu"><img
+                src="../../static/img/sucocupuacu.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sucoabacaxi"><img
+                src="../../static/img/sucoabacaxi.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sucoabacaxihortela"><img
+                src="../../static/img/sucoabacaxihortela.png" /></button>
+    </form>
+</main>
+{% endblock %}

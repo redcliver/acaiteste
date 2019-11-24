@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+<main>
+    <form method="POST" action="/pedidos/tamanho/">
+        {% csrf_token %}
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+
+        <button class="fundo2" type="submit" name="pedido" value="acaipuro"><img
+                src="../../static/img/acaipuro.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaibanana"><img
+                src="../../static/img/acaibanana.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaimorango"><img
+                src="../../static/img/acaimorango.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaimisto"><img
+                src="../../static/img/acaimisto.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaitropical"><img
+                src="../../static/img/acaitropical.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaicupuacu"><img
+                src="../../static/img/acaicupuacu.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaininho"><img
+                src="../../static/img/acaininho.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaikids"><img
+                src="../../static/img/acaikids.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaisensacao"><img
+                src="../../static/img/acaisensacao.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaiflorestanegra"><img
+                src="../../static/img/acaiflorestanegra.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acainutella"><img
+                src="../../static/img/acainutella.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaikitkat"><img
+                src="../../static/img/acaikitkat.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaisonhodevalsa"><img
+                src="../../static/img/acaisonhodevalsa.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaipower"><img
+                src="../../static/img/acaipower.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaizerograu"><img
+                src="../../static/img/acaizerograu.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaipremium"><img
+                src="../../static/img/acaipremium.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaifit"><img
+                src="../../static/img/acaifit.png" /></button>
+        <button class="fundo2" type="submit" name="pedido" value="acaizero"><img
+                src="../../static/img/acaizero.png" /></button>
+    </form>
+</main>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class=" row">
+            <div class="col-md-6">
+                Nome:<br />
+                <input autofocus class="form-control"name="nome" type="text" />
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                Preco:<br />
+                <input class="form-control" name="preco" type="number" step="0.01" />
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                Img:<br />
+                <input class="form-control" name="img" type="text" />
+                <br />
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-default">Salvar</button>
+        </div>
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+{% if msg %}
+    <h2 style="text-align:center;">{{msg}}</h2><hr />
+{%endif%}
+<main>
+    <h3>Dados Cliente</h3>
+    <hr />
+    <h5>Clientes Ativos: {{ativos}}</h5><br />
+    <h5>Clientes Inativos: {{inativos}}</h5>
+</main>
+{% endblock %}

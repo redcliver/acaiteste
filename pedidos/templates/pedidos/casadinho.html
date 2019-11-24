@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+<main>
+    <form method="POST" action="/pedidos/tamanho/">
+        {% csrf_token %}
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+        <button class="fundo1" type="submit" name="pedido" value="casadinhocupuacu"><img
+                src="../../static/img/casadinhocupuacu.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="casadinhomorango"><img
+                src="../../static/img/casadinhomorango.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="casadinhomaracuja"><img
+                src="../../static/img/casadinhomaracuja.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="casadinhoninho"><img
+                src="../../static/img/casadinhoninho.png" /></button>
+    </form>
+</main>
+{% endblock %}

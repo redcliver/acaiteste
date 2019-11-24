@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+{% if msg %}
+    <h2 style="text-align:center;">{{msg}}</h2><hr />
+{%endif%}
+<main>
+    <h3>Novo Pedido</h3>
+    <hr />
+    <form method="post">
+    {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputName">Telefone</label>
+                <input type="text" class="form-control" name="telefone" maxlength="14" onkeydown="javascript: fMasc( this, mTel );" autofocus>
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-2">
+                    <label for="inputName">&nbsp;</label>
+                <button type="submit" formaction="/pedidos/local/" class="form-control btn btn-secondary float-left">Local</button>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputName">&nbsp;</label>
+            <button type="submit" formaction="/pedidos/viagem/" class="form-control btn btn-secondary float-left">Viagem</button>
+        </div>
+            <div class="form-group col-md-8">
+                <label for="inputName">Cliente</label>
+                <select name="cliente_id" class="form-control" >
+                    <option disabled selected > -- Clientes -- </option>
+                    {% for cliente in clientes %}
+                        <option value="{{cliente.id}}">{{cliente.nome}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                    <label for="inputName">&nbsp;</label>
+                <button type="submit" formaction="/pedidos/entrega/" class="form-control btn btn-secondary float-left">Entrega</button>
+            </div>
+        </div>
+        <br />
+    </form>
+</main>
+{% endblock %}

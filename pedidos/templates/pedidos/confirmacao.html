@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+<main>
+    <h3>Pedido:</h3>
+    <button class="fundo1" class="no-click"><img src="../../static/img/{{pedido1}}.png" /></button>
+    <form method="POST" action="/pedidos/finalizar/">
+        {% csrf_token %}
+        <input type="hidden" name="comanda_id" value={{comanda_obj.id}} />
+        <h3>Confirmação:</h3>
+        <button class="fundo3" type="submit" name="pedido_produto" value="{{pedido1}}"><img
+                src="../../static/img/confirmacao.png" /></button>
+    </form>
+    <button class="fundo3" type="submit" onclick="history.go(-1)"><img src="../../static/img/cancelar.png" /></button>
+
+</main>
+{% endblock %}

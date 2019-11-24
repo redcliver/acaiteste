@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+{% if msg %}
+<h2 style="text-align:center;">{{msg}}</h2>
+<hr />
+{%endif%}
+<main>
+    <form method="GET" action="/pedidos/troco/">
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+        <div class="form-row">
+            <div class="form-group col-md-4">
+
+            </div>
+            <div class="form-group col-md-4">
+                <h3> Total: R${{comanda_obj.total}}</h3>
+            </div>
+            <div class="form-group col-md-4">                
+            </div>
+            <div class="form-group col-md-4">                
+            </div>
+            <div class="form-group col-md-4">
+                    <label for="inputName">Recebido:</label>
+                    <input type="text" class="form-control" name="recebido" maxlength="10"
+                    onkeydown="javascript: fMasc( this, mValor );" required autofocus><br />
+            </div>
+            <div class="form-group col-md-4">                
+            </div>
+            <div class="form-group col-md-4">                
+            </div>
+            <div class="form-group col-md-4">
+                    <label for="inputName">Troco:</label>
+                    <input class="form-control" type="text" value="R$00.0" readonly>
+            </div>
+            <div class="form-group col-md-4">                
+            </div>
+            <br />
+            <div class="form-group col-md-4">                
+            </div>
+            <div class="form-group col-md-2"></div>
+            <div class="form-group col-md-2">
+                <button class="style1 fundo3 float-right" type="submit">Finalizar</button>
+            </div>
+    </form>
+</main>
+{% endblock %}

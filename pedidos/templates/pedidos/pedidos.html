@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+{% if msg %}
+    <h2 style="text-align:center;">{{msg}}</h2><hr />
+{%endif%}
+<main>
+    <form method="POST" action="/pedidos/">
+        {% csrf_token %}
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+        <button class="fundo1" type="submit" name="pedido" value="acai"><img src="../../static/img/acai.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="casadinho"><img src="../../static/img/casadinho1.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="mix"><img src="../../static/img/acaimix.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="acaienergy"><img src="../../static/img/acaienergy.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="acaicreme"><img src="../../static/img/cremeacai.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sorvete"><img src="../../static/img/sorvete.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkshake"><img src="../../static/img/milkshake.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="petit"><img src="../../static/img/petit.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="fondue"><img src="../../static/img/fondue.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sucos"><img src="../../static/img/sucos.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="produtos"><img src="../../static/img/produtos.png" /></button>
+    </form>
+</main>
+{% endblock %}

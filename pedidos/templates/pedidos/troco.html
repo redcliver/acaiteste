@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+{% if msg %}
+<h2 style="text-align:center;">{{msg}}</h2>
+<hr />
+{%endif%}
+<main>
+    <form method="GET" action="/pedidos/finalizar1/">
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+        <input type="hidden" name="recebido" value="{{recebido}}" />
+        <input type="hidden" name="troco" value="{{troco}}" />
+        <div class="form-row">
+            <div class="form-group col-md-4">
+
+            </div>
+            <div class="form-group col-md-4">
+                <h3> Total: R${{comanda_obj.total}}</h3>
+            </div>
+            <div class="form-group col-md-4">
+            </div>
+            <div class="form-group col-md-4">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputName">Recebido:</label>
+                <input class="form-control" type="text" value="R${{recebido}}" readonly>
+            </div>
+            <div class="form-group col-md-4">
+            </div>
+            <div class="form-group col-md-4">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputName">Troco:</label>
+                <input class="form-control" type="text" value="R${{troco}}" readonly>
+            </div>
+            <div class="form-group col-md-4">
+            </div>
+            <br />
+            <div class="form-group col-md-4">
+            </div>
+            <div class="form-group col-md-2">
+                <button class="style1 fundo3 float-left" formaction="/" type="submit">Finalizar</button>
+            </div>
+            <div class="form-group col-md-2">
+                <button class="style1 fundo3 float-right" formaction="/pedidos/via_cliente/" type="submit">Via Cliente</button>
+                <button class="style1 fundo3 float-right" formaction="/pedidos/delivery/" type="submit">Via Entrega</button>
+            </div>
+    </form>
+</main>
+{% endblock %}

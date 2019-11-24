@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+{% if msg %}
+    <h2 style="text-align:center;">{{msg}}</h2><hr />
+{%endif%}
+<main>
+    <h3>Edita Cliente</h3>
+    <hr />
+    <form method="POST" action="/cliente/edita_cliente/">
+    {%csrf_token%}
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <select name="cliente_id" class="form-control" required>
+                    <option disabled selected > -- Clientes -- </option>
+                    {% for cliente in clientes %}
+                        <option value={{cliente.id}}>{{cliente.nome}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <button type="submit" class="btn btn-secondary float-right">Editar</button>
+            </div>
+        </div>
+    </form>
+</main>
+{% endblock %}

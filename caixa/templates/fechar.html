@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+{% if msg %}
+    <h1 style="text-align:center;">{{msg}}</h1><hr />
+{%endif%}
+<h1>Fechar caixa</h1><hr />
+    <form method="POST">
+    {%csrf_token%}
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <h5>Total em dinheiro : </h5>
+                <input type="text" value="{{dinheiro}}" class="form-control" name="dinheiro" maxlength="10" onkeydown="javascript: fMasc( this, mValor );"  required>                
+            </div>
+            <div class="form-group col-md-4">
+                <h5>Total em cartão débito: </h5>
+                <input type="text" value="{{cartao_debito}}" class="form-control" name="cartao_debito" maxlength="10" onkeydown="javascript: fMasc( this, mValor );"  required>
+            </div>
+            <div class="form-group col-md-4">
+                <h5>Total em cartão crédito: </h5>
+                <input type="text" value="{{cartao_credito}}" class="form-control" name="cartao_credito" maxlength="10" onkeydown="javascript: fMasc( this, mValor );"  required>
+            </div>
+            <div class="form-group col-md-12">
+            </div>
+            <div class="form-group col-md-12">
+            </div>
+            <div class="form-group col-md-4">
+                <div class="form-group col-md-12">
+                    <h5>Entregas: </h5>
+                </div>
+                <div class="form-group col-md-6">                
+                    <input type="number" value="{{entrega}}" class="form-control" name="entrega" required>
+                    
+                </div>
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label for="inputTel">Valor da retirada</label>
+                <input type="text" class="form-control" name="retirada" maxlength="10" onkeydown="javascript: fMasc( this, mValor );" required autofocus>
+            </div>
+            <div class="form-group col-md-12">
+                <br>
+                <button class="btn btn-secondary float-right" type="submit">Salvar</button>
+            </div>
+        </div>
+    </form>
+    {% endblock %}

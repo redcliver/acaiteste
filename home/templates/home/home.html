@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+<main >
+    {% if msg %}
+        <h3>{{msg}}</h3>
+    {% else %}
+        <h3>Tenha um bom trabalho!</h3>
+    {% endif %}
+</main>
+{% endblock %}
+

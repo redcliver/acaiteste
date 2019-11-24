@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+{% if msg %}
+    <h1 style="text-align:center;">{{msg}}</h1><hr />
+{%endif%}
+<h1>Retirada</h1><hr />
+    <form method="POST">
+    {%csrf_token%}
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <h4>Total em dinheiro : R$ {{caixa_atual.total}}</h4>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="inputName">Motivo</label>
+                <input type="text" class="form-control" id="inputEmail4" name="motivo" maxlength="200" required autofocus>
+            </div>  
+            <div class="form-group col-md-4">
+                <label for="inputTel">Valor</label>
+                <input type="text" class="form-control" name="retirada" maxlength="10" onkeydown="javascript: fMasc( this, mValor );" required>
+            </div>
+            <div class="form-group col-md-4">
+            
+            </div>
+            <div class="form-group col-md-4">
+                <br>
+                <button class="btn btn-secondary float-right" type="submit">Salvar</button>
+            </div>
+        </div>
+    </form>
+    {% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+<main>
+    <form method="POST" action="/pedidos/tamanho/">
+        {% csrf_token %}
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+        <button class="fundo1" type="submit" name="pedido" value="milkcremebranco"><img
+                src="../../static/img/milkcremebranco.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkmorango"><img
+                src="../../static/img/milkmorango.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkchocolate"><img
+                src="../../static/img/milkchocolate.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkninho"><img
+                src="../../static/img/milkninho.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkovomaltine"><img
+                src="../../static/img/milkovomaltine.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkoreo"><img
+                src="../../static/img/milkoreo.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkcappuccino"><img
+                src="../../static/img/milkcappuccino.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkpacoca"><img
+                src="../../static/img/milkpacoca.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkcookies"><img
+                src="../../static/img/milkcookies.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkmorangoovomaltine"><img
+                src="../../static/img/milkmorangoovomaltine.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkmorangonutella"><img
+                src="../../static/img/milkmorangonutella.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkovomaltinenutella"><img
+                src="../../static/img/milkovomaltinenutella.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="milkninhonutella"><img
+                src="../../static/img/milkninhonutella.png" /></button>
+    </form>
+</main>
+{% endblock %}

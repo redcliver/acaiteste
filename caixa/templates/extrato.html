@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+{% if msg %}
+    <h1 style="text-align:center;">{{msg}}</h1><hr />
+{%endif%}
+<h1>Extrato por Data</h1><hr />
+    <form method="POST">
+    {%csrf_token%}
+    <div class="form-row">
+        <div class="form-group col-md-4">
+        </div>
+        <div class="form-group col-md-4">
+        </div>
+        <div class="form-group col-md-4">
+            <label>Data </label>
+            <input type="date" class="form-control" value="{{data}}" name="data" title="Selecione a data."/>
+            <button type="submit" class="btn btn-secondary float-right" title="Buscar por data.">Buscar</button>
+        </div>
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th width="5%">#</th>
+                    <th width="10%">Hora</th>
+                    <th width="10%">Operação</th>
+                    <th width="15%">Método</th>
+                    <th width="30%">Descrição</th>
+                    <th width="15%">Valor Op.</th>
+                    <th width="15%">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if caixas %}
+                {% for caixa_geral in caixas %}
+                <tr>
+                    <td>{{caixa_geral.id}}</td>
+                    <td>{{caixa_geral.data|date:"H:i"}}</td>
+                    <td>{{caixa_geral.get_operacao_display}}</td>
+                    <td>{{caixa_geral.get_tipo_display}}</td>
+                    <td>{{caixa_geral.descricao}}</td>
+                    <td>R$ {{caixa_geral.valor_operacao}}</td>
+                    <td>R$ {{caixa_geral.total}}</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <h5>Dinheiro: R$ {{dinheiro}}</h5>
+            <h5>Cartão: R$ {{cartao}}</h5>
+            <h5>Saidas: R$ {{saida}}</h5><br />
+            <h4>Total: R$ {{total_geral}}</h4>
+        </div>
+        <div class="form-group col-md-4">
+        </div>
+        <div class="form-group col-md-4">
+            <h5>Entrega: {{entrega}}x</h5>
+            <h5>Viagem: {{viagem}}x</h5>
+            <h5>Local: {{local}}x</h5>
+            <h5>Total: {{total_pedido}}x</h5>
+        </div>
+    </div>
+    </form>
+{% endblock %}

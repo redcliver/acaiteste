@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+<main>
+    <form method="POST" action="/pedidos/tamanho/">
+        {% csrf_token %}
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+        <button class="fundo1" type="submit" name="pedido" value="fondueclassico"><img
+                src="../../static/img/fondueclassico.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="fonduekids"><img
+                src="../../static/img/fonduekids.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="fonduezerograu"><img
+                src="../../static/img/fonduezerograu.png" /></button>
+    </form>
+</main>
+{% endblock %}

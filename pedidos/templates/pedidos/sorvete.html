@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+<main>
+    <form method="POST" action="/pedidos/tamanho/">
+        {% csrf_token %}
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+        <button class="fundo1" type="submit" name="pedido" value="cascao"><img
+                src="../../static/img/cascao.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="simples"><img
+                src="../../static/img/simples.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sundae"><img
+                src="../../static/img/sundae.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="kids"><img src="../../static/img/kids.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="morango"><img
+                src="../../static/img/morango.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="napolitano"><img
+                src="../../static/img/napolitano.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="brigadeiro"><img
+                src="../../static/img/brigadeiro.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="beijinho"><img
+                src="../../static/img/beijinho.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="ninho"><img
+                src="../../static/img/ninho.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="lacta"><img
+                src="../../static/img/lacta.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="kitkat"><img
+                src="../../static/img/kitkat.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="bis"><img src="../../static/img/bis.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="ovomaltine"><img
+                src="../../static/img/ovomaltine.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="oreo"><img src="../../static/img/oreo.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="churros"><img
+                src="../../static/img/churros.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="merenguemorango"><img
+                src="../../static/img/merenguemorango.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sonhodevalsa"><img
+                src="../../static/img/sonhodevalsa.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="ourobranco"><img
+                src="../../static/img/ourobranco.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="bananasplit"><img
+                src="../../static/img/bananasplit.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="sorv_bola"><img
+                src="../../static/img/sorv_bola.png" /></button>
+    </form>
+</main>
+{% endblock %}

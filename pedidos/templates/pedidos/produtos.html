@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+<main>
+    <form method="POST" action="/pedidos/tamanho/">
+        {% csrf_token %}
+        <input type="hidden" name="comanda_id" value="{{comanda_obj.id}}" />
+        <button class="fundo1" type="submit" name="pedido" value="cocacola"><img
+                src="../../static/img/cocacola.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="cocazero"><img
+                src="../../static/img/cocazero.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="guarana"><img
+                src="../../static/img/guarana.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="coca2l"><img
+                src="../../static/img/coca2l.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="aguasgas"><img
+                src="../../static/img/aguasgas.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="aguacgas"><img
+                src="../../static/img/aguacgas.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="cafe"><img
+                src="../../static/img/cafe.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="cappucinopequeno"><img
+                src="../../static/img/cappucinopequeno.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="cappucinogrande"><img
+                src="../../static/img/cappucinogrande.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="bolocaseiro"><img
+                src="../../static/img/bolocaseiro.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="paodequeijo"><img
+                src="../../static/img/paodequeijo.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="crepe"><img
+                src="../../static/img/crepe.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="tapioca"><img
+                src="../../static/img/tapioca.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="entrega3"><img
+                src="../../static/app/img/entrega3.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="entrega5"><img
+                src="../../static/app/img/entrega5.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="azul30"><img
+                src="../../static/img/azul30.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="azul60"><img
+                src="../../static/img/azul60.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="chiclete"><img
+                src="../../static/img/chiclete.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="adds"><img 
+                src="../../static/img/adds.png" /></button>
+        <button class="fundo1" type="submit" name="pedido" value="salgado"><img
+                src="../../static/img/salgado.png" /></button>
+    </form>
+</main>
+{% endblock %}

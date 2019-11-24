@@ -1,0 +1,84 @@
+.mynavbar {
+    background: #639636;
+    /* IE10+ */
+    background-image: -ms-linear-gradient(top, #84DB77 0%, #1ABD35 50%, #1ABD35 51%, #84DB77 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(top, #84DB77 0%, #1ABD35 50%, #1ABD35 51%, #84DB77 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(top, #84DB77 0%, #1ABD35 50%, #1ABD35 51%, #84DB77 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #84DB77), color-stop(50, #1ABD35), color-stop(51, #1ABD35), color-stop(100, #84DB77));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(top, #84DB77 0%, #1ABD35 50%, #1ABD35 51%, #84DB77 100%);
+    /* W3C Markup */
+    background-image: linear-gradient(to bottom, #84DB77 0%, #1ABD35 50%, #1ABD35 51%, #84DB77 100%);
+    min-height: 160px;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-color: #551a8b;
+    margin-bottom: 19px;
+    color: #eaeaea;
+}
+
+.myjumbotron {
+    background-color: #000000;
+    /* IE10+ */
+    background-image: -ms-linear-gradient(top, #84DB77 0%, #1ABD35 50%, #1ABD35 51%, #84DB77 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(top, #84DB77 0%, #1ABD35 50%, #1ABD35 51%, #84DB77 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(top, #84DB77 0%, #1ABD35 50%, #1ABD35 51%, #84DB77 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #84DB77), color-stop(50, #1ABD35), color-stop(51, #1ABD35), color-stop(100, #84DB77));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(top, #84DB77 0%, #1ABD35 50%, #1ABD35 51%, #84DB77 100%);
+    /* W3C Markup */
+    background-image: linear-gradient(to bottom, #84DB77 0%, #1ABD35 50%, #1ABD35 51%, #84DB77 100%);
+    min-height: 350px;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-color: #885ead;
+    margin-bottom: 19px;
+    color: #eaeaea;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+label > input { /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+
+    label > input + img { /* IMAGE STYLES */
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
+
+    label > input:checked + img { /* (RADIO CHECKED) IMAGE STYLES */
+        border: 2px solid #ed7357;
+    }
+
+.no-click {
+    pointer-events: none;
+}
+
+.style {
+    padding: 29px;
+}
+
+.style1 {
+    padding: 20px;
+}
+
+.total {
+    color: #772B66;
+}

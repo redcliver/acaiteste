@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+<main>
+    <div class="col-md-10">
+        {% if item_acai_id %}
+        <button class="no-click fundo1"><img src="../../static/img/{{item_acai_id.acai_item.img}}.png" /></button>
+        <button class="no-click fundo1"><img src="../../static/img/{{item_acai_id.acai_item.tamanho}}.png" /></button>
+        {% endif %}
+        {% if item_casadinho_id %}
+        <button class="no-click fundo1"><img
+                src="../../static/img/{{item_casadinho_id.casadinho_item.img}}.png" /></button>
+        <button class="no-click fundo1"><img
+                src="../../static/img/{{item_casadinho_id.casadinho_item.tamanho}}.png" /></button>
+        {% endif %}
+        {% if item_mix_id %}
+        <button class="no-click fundo1"><img src="../../static/img/{{item_mix_id.mix_item.img}}.png" /></button>
+        <button class="no-click fundo1"><img src="../../static/img/{{item_mix_id.mix_item.tamanho}}.png" /></button>
+        {% endif %}
+        {% if item_creme_id %}
+        <button class="no-click fundo1"><img src="../../static/img/{{item_creme_id.creme_item.img}}.png" /></button>
+        <button class="no-click fundo1"><img src="../../static/img/{{item_creme_id.creme_item.tamanho}}.png" /></button>
+        {% endif %}
+        {% if item_sorvete_id %}
+        <button class="no-click fundo1"><img src="../../static/img/{{item_sorvete_id.sorvete_item.img}}.png" /></button>
+        {% endif %}
+        {% if item_mshake_id %}
+        <button class="no-click fundo1"><img src="../../static/img/{{item_mshake_id.mshake_item.img}}.png" /></button>
+        <button class="no-click fundo1"><img
+                src="../../static/img/{{item_mshake_id.mshake_item.tamanho}}.png" /></button>
+        {% endif %}
+        {% if item_petit_id %}
+        <button class="no-click fundo1"><img src="../../static/img/{{item_petit_id.petit_item.img}}.png" /></button>
+        {% endif %}
+        {% if item_fondue_id %}
+        <button class="no-click fundo1"><img src="../../static/img/{{item_fondue_id.fondue_item.img}}.png" /></button>
+        {% endif %}
+    </div>
+    <form method="POST" action="/pedidos/finalizar/">
+        <div class="col-md-2">
+            <button autofocus class="style1 fundo3" type="submit">Finalizar</button>
+        </div>
+        {% csrf_token %}
+        {% if item_acai_id %}
+        <input type="hidden" name="item_acai_id" value="{{item_acai_id}}" />
+        {% endif %}
+        {% if item_casadinho_id %}
+        <input type="hidden" name="item_casadinho_id" value="{{item_casadinho_id}}" />
+        {% endif %}
+        {% if item_mix_id %}
+        <input type="hidden" name="item_mix_id" value="{{item_mix_id}}" />
+        {% endif %}
+        {% if item_creme_id %}
+        <input type="hidden" name="item_creme_id" value="{{item_creme_id}}" />
+        {% endif %}
+        {% if item_sorvete_id %}
+        <input type="hidden" name="item_sorvete_id" value="{{item_sorvete_id}}" />
+        {% endif %}
+        {% if item_mshake_id %}
+        <input type="hidden" name="item_mshake_id" value="{{item_mshake_id}}" />
+        {% endif %}
+        {% if item_petit_id %}
+        <input type="hidden" name="item_petit_id" value="{{item_petit_id}}" />
+        {% endif %}
+        {% if item_fondue_id %}
+        <input type="hidden" name="item_fondue_id" value="{{item_fondue_id}}" />
+        {% endif %}
+        <input type="hidden" name="comanda_id" value="{{comanda_id}}" />
+
+        <div class="col-md-12">
+            <br />
+            <h3>Adicionais: </h3>
+            {% for adicional in adicionais %}
+            <label>
+                <input type="checkbox" name="adicional2" value="{{adicional.id}}" />
+                <img src="../../static/img/adicionais/{{adicional.img}}.png" />
+            </label>
+            {% endfor %}
+        </div>
+    </form>
+</main>
+{% endblock %}

@@ -1,0 +1,1 @@
+web: gunicorn acaiteste.wsgi --log-file -
